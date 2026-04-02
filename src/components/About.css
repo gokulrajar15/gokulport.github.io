@@ -40,20 +40,36 @@
 
 /* Introduction */
 .about-intro {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .intro-text {
-  font-size: 1.2rem;
-  line-height: 1.9;
+  font-size: 1.1rem;
+  line-height: 1.85;
   color: var(--text-secondary);
 }
 
 .intro-text strong {
   color: var(--text-primary);
   font-weight: 600;
+}
+
+.intro-text .text-link {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.intro-text .text-link:hover {
+  color: var(--accent-tertiary);
+  text-decoration: underline;
+}
+
+.intro-text + .intro-text {
+  margin-top: 1rem;
 }
 
 /* Metrics Bar */

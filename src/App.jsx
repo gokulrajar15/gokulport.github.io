@@ -4,6 +4,7 @@ import About from './components/About'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Writing from './components/Writing'
 import Contact from './components/Contact'
 import CurveDivider from './components/CurveDivider'
 import MatrixRain from './components/MatrixRain'
@@ -26,6 +27,8 @@ function App() {
         <CurveDivider type="softmax" />
         <Projects />
         <CurveDivider type="sigmoid" />
+        <Writing />
+        <CurveDivider type="relu" />
         <Contact />
       </main>
     </div>

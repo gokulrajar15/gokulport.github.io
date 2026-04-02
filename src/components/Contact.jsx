@@ -26,6 +26,15 @@ const Contact = () => {
       url: 'https://linkedin.com/in/gokul-raja-1541b8226' 
     },
     { 
+      name: 'Medium', 
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+        </svg>
+      ),
+      url: 'https://medium.com/@gokulrajar' 
+    },
+    { 
       name: 'Email', 
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -42,11 +51,61 @@ const Contact = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Writing', href: '#writing' },
   ]
   
   return (
     <footer id="contact" className="footer" ref={ref}>
       <div className="container">
+        {/* Contact Header */}
+        <motion.div
+          className="contact-header"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="contact-title">Let's build something together</h2>
+          <p className="contact-subtitle">
+            I'm currently open to AI Engineering and MLOps roles. Let's connect!
+          </p>
+          
+          {/* Mailto Button */}
+          <motion.a
+            href="mailto:gokulrajar15@gmail.com?subject=Let's%20connect"
+            className="mailto-btn"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span>Get in touch</span>
+            <span className="mailto-arrow">→</span>
+          </motion.a>
+          
+          {/* Social Links */}
+          <div className="contact-social">
+            {socialLinks.map((link) => (
+              <motion.a
+                key={link.name}
+                href={link.url}
+                target={link.name !== 'Email' ? "_blank" : undefined}
+                rel={link.name !== 'Email' ? "noopener noreferrer" : undefined}
+                className="contact-social-link"
+                whileHover={{ scale: 1.1, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label={link.name}
+              >
+                {link.icon}
+                <span className="social-name">{link.name}</span>
+              </motion.a>
+            ))}
+          </div>
+          
+          {/* Open to work note */}
+          <div className="open-to-work-note">
+            <span className="pulse-dot-small"></span>
+            <span>Currently open to AI Engineering and MLOps roles</span>
+          </div>
+        </motion.div>
+
         <div className="footer-content">
           {/* Left - Brand */}
           <motion.div
@@ -94,10 +153,7 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="footer-heading">Let's Connect</h4>
-            <p className="footer-connect-text">
-              Open for collaborations and opportunities
-            </p>
+            <h4 className="footer-heading">Connect</h4>
             <div className="footer-social">
               {socialLinks.map((link) => (
                 <motion.a

@@ -495,3 +495,63 @@
     justify-content: center;
   }
 }
+
+/* ===== FEATURED BADGE & STAR BADGE ===== */
+.project-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.featured-badge {
+  background: rgba(245, 158, 11, 0.1) !important;
+  border-color: #f59e0b !important;
+}
+
+.featured-badge .badge-icon,
+.featured-badge .badge-text {
+  color: #f59e0b !important;
+}
+
+.featured-tab {
+  position: relative;
+}
+
+.featured-indicator {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: white;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+
+.project-tagline {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: -0.5rem 0 0.5rem;
+  line-height: 1.5;
+}
+
+.github-star-badge {
+  margin-top: 0.5rem;
+}
+
+.shields-badge {
+  height: 22px;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.shields-badge:hover {
+  transform: scale(1.05);
+}

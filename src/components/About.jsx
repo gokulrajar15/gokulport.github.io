@@ -67,9 +67,9 @@ const About = () => {
 
   const metrics = [
     { value: 3, suffix: '+', label: 'Years Experience', icon: '⏱️' },
-    { value: 7, suffix: '', label: 'Projects Delivered', icon: '🚀' },
-    { value: 5, suffix: '', label: 'Clients Served', icon: '🤝' },
-    { value: 2, suffix: '', label: 'Organizations', icon: '🏢' },
+    { value: 5, suffix: '+', label: 'Clients Served', icon: '🤝' },
+    { value: 200, suffix: 'K+', label: 'Medium Readers', icon: '📖' },
+    { value: 2, suffix: '', label: 'Play Store Apps', icon: '📱' },
   ]
 
   const expertise = [
@@ -137,11 +137,31 @@ const About = () => {
           {/* Introduction */}
           <motion.div variants={itemVariants} className="about-intro">
             <p className="intro-text">
-              I'm an <strong>AI/ML Engineer</strong> who transforms complex business challenges into 
-              intelligent, production-ready AI systems. With expertise spanning <strong>ML Modeling</strong>, 
-              <strong> Agentic AI</strong>, <strong>RAG Applications</strong>, <strong>Database Management</strong>, 
-              <strong> Backend Development</strong>, and <strong>Cloud Platforms</strong>, I build 
-              solutions that don't just work—they deliver measurable results.
+              I'm an <strong>AI/ML Engineer</strong> with <strong>3+ years</strong> of experience building and deploying 
+              production-grade AI systems. I've worked with <strong>5+ clients</strong> across both service and product-based 
+              environments, leading the delivery of multiple AI projects and successfully shipping products used in real-world applications.
+            </p>
+            <p className="intro-text">
+              I specialize in designing <strong>end-to-end AI systems</strong>—from ML modeling to scalable backend and cloud deployment. 
+              My work focuses on <strong>Agentic AI</strong>, <strong>RAG applications</strong>, and <strong>production ML pipelines</strong>, 
+              where I handle everything from data processing and model development to serving, monitoring, and optimization.
+            </p>
+            <p className="intro-text">
+              I've built and deployed solutions across domains including <strong>Finance</strong>, <strong>Banking</strong>, 
+              <strong>Mutual Funds</strong>, <strong>Legal</strong>, <strong>E-Commerce</strong>, and <strong>Supply Chain</strong>. 
+              My key work includes AI-powered chatbots using agentic architectures, fraud detection systems for banking, 
+              supply chain risk prediction models, and RAG systems for legal data.
+            </p>
+            <p className="intro-text">
+              Beyond client work, I actively build and experiment with real-world AI systems. I've shipped products available on 
+              the <strong>Play Store</strong> and continuously work on personal projects to deepen my expertise. I also share my 
+              learnings through technical writing on <a href="https://medium.com/@gokulrajar" target="_blank" rel="noopener noreferrer" className="text-link">Medium</a>, 
+              where my content has reached <strong>200K+ readers</strong>.
+            </p>
+            <p className="intro-text">
+              Currently, I'm focused on advancing my understanding of <strong>system design</strong> and <strong>scalable AI infrastructure</strong>, 
+              while exploring deeper concepts in LLMs and backend systems. I'm open to <strong>AI Engineering and MLOps roles</strong> where 
+              I can build systems that move beyond prototypes and create real impact.
             </p>
           </motion.div>
 

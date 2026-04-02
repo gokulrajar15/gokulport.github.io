@@ -10,53 +10,115 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Risk Analytics & Fraud Detection',
-      subtitle: 'End-to-End MLOps Pipeline on Google Cloud',
-      description: 'Production-grade credit card fraud detection system with complete ML lifecycle automation. Features CI/CD/CT pipelines with Vertex AI for experiment tracking, model versioning, and automated deployments. Implements data drift detection, concept drift monitoring, and Blue-Green/Canary deployment strategies.',
-      highlights: [
-        { metric: '98.5%', label: 'Precision', icon: '◎' },
-        { metric: '97.2%', label: 'Recall', icon: '◉' },
-        { metric: '<50ms', label: 'Latency', icon: '⚡' },
-        { metric: '0.995', label: 'AUC-ROC', icon: '📈' },
-      ],
-      techStack: ['Vertex AI', 'XGBoost', 'FastAPI', 'Cloud Build', 'BigQuery', 'Pub/Sub', 'Docker', 'Terraform'],
-      features: [
-        '1M+ API requests/min with auto-scaling',
-        'Automated weekly retraining with drift detection',
-        'Vertex AI Model Registry & Experiment Tracking',
-        'Blue-Green & Canary deployment strategies',
-        'Class-weighting & hyperparameter tuning for imbalanced data',
-      ],
-      equation: 'ŷ = σ(Σ wᵢxᵢ + b) → fraud/legit',
-      color: '#6366f1',
-      gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-      github: 'https://github.com/gokulrajar15/Risk-Analytics-Fraud-Detection',
-      status: 'Production',
-    },
-    {
-      id: 2,
       title: 'Arxiv Agentic RAG',
+      tagline: 'Production RAG for 10M+ research papers with multi-agent retrieval',
       subtitle: 'Large-Scale Scientific Knowledge System',
-      description: 'Production-grade Agentic RAG system indexing 10M+ ArXiv papers with multi-step reasoning agents. Features 4-layer input guardrails for safety, dual inference engines (Triton + LitServe), and custom embedding model (embeddinggemma-300m, 768D vectors). Built with continuous monitoring via LangSmith and evaluation with DeepEval.',
+      description: 'Production-grade Agentic RAG system indexing 10M+ ArXiv papers with multi-step reasoning agents. Features 4-layer input guardrails for safety, dual inference engines (Triton + LitServe), and custom embedding model.',
       highlights: [
         { metric: '10M+', label: 'Papers Indexed', icon: '📄' },
-        { metric: '4-Layer', label: 'Guardrails', icon: '🛡' },
+        { metric: '17', label: 'GitHub Stars', icon: '⭐' },
         { metric: '<1s', label: 'Retrieval', icon: '⚡' },
         { metric: '>90%', label: 'Safety Score', icon: '✓' },
       ],
-      techStack: ['LangChain', 'LangGraph', 'Triton Server', 'LitServe', 'PostgreSQL', 'FastAPI', 'DeepEval', 'LangSmith'],
+      techStack: ['Python', 'LangChain', 'LangGraph', 'FastAPI', 'PostgreSQL', 'Triton', 'LitServe', 'DeepEval'],
       features: [
         'AI Agent with multi-query retrieval strategies',
-        'Toxicity filtering (toxic-comment-model)',
-        'Bias detection (distilroberta-bias)',
-        'Prompt injection & jailbreak prevention',
-        'Topic classification (bart-large-mnli)',
+        '4-layer guardrails (toxicity, bias, injection, jailbreak)',
+        'Dual inference: Triton Server + LitServe',
+        'Custom embedding model (768D vectors)',
+        'Continuous monitoring via LangSmith',
       ],
       equation: 'Attn(Q,K,V) = softmax(QKᵀ/√dₖ)V',
       color: '#8b5cf6',
       gradient: 'linear-gradient(135deg, #8b5cf6, #06b6d4)',
       github: 'https://github.com/gokulrajar15/Arxiv-Rag',
       status: 'Production',
+      featured: true,
+      stars: 17,
+    },
+    {
+      id: 2,
+      title: 'Drug Classification MLOps',
+      tagline: 'End-to-end MLOps pipeline with CI/CD and experiment tracking',
+      subtitle: 'Complete ML Lifecycle Automation',
+      description: 'Full MLOps pipeline for drug classification featuring automated training, MLflow experiment tracking, Docker containerization, and CI/CD workflows. Demonstrates production ML best practices.',
+      highlights: [
+        { metric: '7', label: 'GitHub Stars', icon: '⭐' },
+        { metric: 'CI/CD', label: 'Pipeline', icon: '🔄' },
+        { metric: 'MLflow', label: 'Tracking', icon: '📊' },
+        { metric: 'Docker', label: 'Container', icon: '🐳' },
+      ],
+      techStack: ['Python', 'MLflow', 'Docker', 'GitHub Actions', 'Scikit-Learn', 'FastAPI'],
+      features: [
+        'Automated model training pipeline',
+        'MLflow experiment tracking & model registry',
+        'Docker containerized deployment',
+        'GitHub Actions CI/CD workflows',
+        'Model versioning and artifact management',
+      ],
+      equation: 'P(drug|features) = argmax P(y|X)',
+      color: '#10b981',
+      gradient: 'linear-gradient(135deg, #10b981, #06b6d4)',
+      github: 'https://github.com/gokulrajar15/Drug-Classification-Mlops',
+      status: 'Production',
+      featured: true,
+      stars: 7,
+    },
+    {
+      id: 3,
+      title: 'Risk Analytics & Fraud Detection',
+      tagline: 'Real-time credit card fraud detection with full MLOps lifecycle',
+      subtitle: 'End-to-End MLOps Pipeline on Google Cloud',
+      description: 'Production-grade credit card fraud detection system with complete ML lifecycle automation. Features CI/CD/CT pipelines with Vertex AI for experiment tracking, model versioning, and automated deployments.',
+      highlights: [
+        { metric: '98.5%', label: 'Precision', icon: '◎' },
+        { metric: '97.2%', label: 'Recall', icon: '◉' },
+        { metric: '<50ms', label: 'Latency', icon: '⚡' },
+        { metric: '0.995', label: 'AUC-ROC', icon: '📈' },
+      ],
+      techStack: ['Python', 'Vertex AI', 'XGBoost', 'FastAPI', 'BigQuery', 'Docker', 'Terraform'],
+      features: [
+        '1M+ API requests/min with auto-scaling',
+        'Automated weekly retraining with drift detection',
+        'Vertex AI Model Registry & Experiment Tracking',
+        'Blue-Green & Canary deployment strategies',
+        'Class-weighting for imbalanced data',
+      ],
+      equation: 'ŷ = σ(Σ wᵢxᵢ + b) → fraud/legit',
+      color: '#6366f1',
+      gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+      github: 'https://github.com/gokulrajar15/Risk-Analytics-Fraud-Detection',
+      status: 'Production',
+      featured: false,
+      stars: 2,
+    },
+    {
+      id: 4,
+      title: 'LitServe Llama 3.2 API',
+      tagline: 'Private Llama 3.2 1B deployment with high-performance serving',
+      subtitle: 'LLM API Deployment via LitServe',
+      description: 'High-performance Llama 3.2 1B model deployment using LitServe for efficient inference. Features optimized serving with batching support and fast response times.',
+      highlights: [
+        { metric: '1B', label: 'Parameters', icon: '🧠' },
+        { metric: 'Fast', label: 'Inference', icon: '⚡' },
+        { metric: 'REST', label: 'API', icon: '🔌' },
+        { metric: 'Batch', label: 'Support', icon: '📦' },
+      ],
+      techStack: ['Python', 'LitServe', 'Transformers', 'PyTorch', 'FastAPI'],
+      features: [
+        'Llama 3.2 1B model serving',
+        'LitServe high-performance inference',
+        'RESTful API endpoints',
+        'Batched request processing',
+        'Optimized memory management',
+      ],
+      equation: 'LLM(prompt) → response',
+      color: '#f59e0b',
+      gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)',
+      github: 'https://github.com/gokulrajar15/LitServe_Llama-3.2-1B',
+      status: 'Active',
+      featured: false,
+      stars: 0,
     },
   ]
   
@@ -91,10 +153,11 @@ const Projects = () => {
           {projects.map((project, index) => (
             <button
               key={project.id}
-              className={`project-tab ${activeProject === index ? 'active' : ''}`}
+              className={`project-tab ${activeProject === index ? 'active' : ''} ${project.featured ? 'featured-tab' : ''}`}
               onClick={() => setActiveProject(index)}
               style={{ '--tab-color': project.color }}
             >
+              {project.featured && <span className="featured-indicator">★</span>}
               <span className="tab-number mono">0{index + 1}</span>
               <span className="tab-title">{project.title.split(' ').slice(0, 2).join(' ')}</span>
               <span className="tab-status mono">{project.status}</span>
@@ -113,15 +176,32 @@ const Projects = () => {
         >
           {/* Left: Info */}
           <div className="project-info">
-            <div className="project-badge">
-              <span className="badge-icon">◆</span>
-              <span className="badge-text mono">{currentProject.status}</span>
+            <div className="project-badges-row">
+              <div className="project-badge">
+                <span className="badge-icon">◆</span>
+                <span className="badge-text mono">{currentProject.status}</span>
+              </div>
+              {currentProject.featured && (
+                <div className="project-badge featured-badge">
+                  <span className="badge-icon">★</span>
+                  <span className="badge-text mono">Featured</span>
+                </div>
+              )}
             </div>
             
             <h3 className="project-title">{currentProject.title}</h3>
-            <p className="project-subtitle">{currentProject.subtitle}</p>
+            <p className="project-tagline">{currentProject.tagline}</p>
             
             <p className="project-description">{currentProject.description}</p>
+            
+            {/* GitHub Star Badge */}
+            <div className="github-star-badge">
+              <img 
+                src={`https://img.shields.io/github/stars/gokulrajar15/${currentProject.github.split('/').pop()}?style=flat&logo=github&label=Stars`}
+                alt={`${currentProject.title} GitHub stars`}
+                className="shields-badge"
+              />
+            </div>
             
             {/* Metrics Grid */}
             <div className="metrics-grid">

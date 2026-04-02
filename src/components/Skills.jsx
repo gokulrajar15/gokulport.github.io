@@ -6,46 +6,41 @@ const Skills = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   
+  // Core specializations
+  const specializations = [
+    { name: 'ML Modeling', icon: '🧠' },
+    { name: 'Agentic AI', icon: '🤖' },
+    { name: 'RAG Applications', icon: '🔍' },
+    { name: 'Database Management', icon: '🗄️' },
+    { name: 'Backend Development', icon: '⚙️' },
+    { name: 'Cloud Platforms', icon: '☁️' },
+  ]
+
   const skillCategories = [
     {
-      title: 'AI & LLM',
-      icon: '∇',
-      skills: [
-        { name: 'LangChain/LangGraph', level: 95 },
-        { name: 'OpenAI/Gemini/Claude', level: 95 },
-        { name: 'RAG Systems', level: 93 },
-        { name: 'Multi-Agent Systems', level: 92 },
-      ],
+      title: 'ML & AI Frameworks',
+      icon: '🧠',
+      skills: ['PyTorch', 'TensorFlow', 'Scikit-Learn', 'LangChain', 'LangGraph', 'Transformers', 'OpenAI', 'Gemini'],
     },
     {
-      title: 'ML Frameworks',
-      icon: '∑',
-      skills: [
-        { name: 'PyTorch', level: 90 },
-        { name: 'TensorFlow', level: 88 },
-        { name: 'Scikit-Learn', level: 92 },
-        { name: 'Transformers', level: 90 },
-      ],
+      title: 'MLOps & Infrastructure',
+      icon: '⚙️',
+      skills: ['Docker', 'Kubernetes', 'MLflow', 'Vertex AI', 'Triton Server', 'LitServe', 'GitHub Actions', 'Terraform'],
     },
     {
-      title: 'MLOps & Cloud',
-      icon: '∫',
-      skills: [
-        { name: 'Docker/Kubernetes', level: 88 },
-        { name: 'Azure/AWS/GCP', level: 87 },
-        { name: 'MLflow/Vertex AI', level: 85 },
-        { name: 'Triton/LitServe', level: 85 },
-      ],
+      title: 'Languages',
+      icon: '💻',
+      skills: ['Python', 'C', 'C++', 'Java', 'Rust', 'SQL', 'Bash'],
     },
     {
-      title: 'Languages & APIs',
-      icon: 'λ',
-      skills: [
-        { name: 'Python', level: 98 },
-        { name: 'FastAPI/Flask', level: 90 },
-        { name: 'SQL', level: 88 },
-        { name: 'C/C++', level: 75 },
-      ],
+      title: 'Backend & Databases',
+      icon: '🗄️',
+      skills: ['FastAPI', 'Flask', 'Django', 'PostgreSQL', 'MongoDB', 'MySQL', 'Pinecone', 'Qdrant'],
+    },
+    {
+      title: 'Cloud & DevOps',
+      icon: '☁️',
+      skills: ['Azure', 'AWS', 'GCP', 'Git', 'Linux', 'CI/CD', 'BigQuery'],
     },
   ]
   
@@ -80,64 +75,86 @@ const Skills = () => {
           </span>
           <h2 className="section-title">My Tech Stack</h2>
           <p className="section-subtitle">
-            The mathematical tools and technologies I use to build AI systems
+            Technologies I use to build production ML systems
           </p>
+        </motion.div>
+        
+        {/* Core Specializations */}
+        <motion.div
+          className="specializations-section"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          <h3 className="specializations-title">I specialize in</h3>
+          <div className="specializations-grid">
+            {specializations.map((spec, index) => (
+              <motion.div
+                key={spec.name}
+                className="specialization-card"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
+                whileHover={{ y: -3, scale: 1.02 }}
+              >
+                <span className="spec-icon">{spec.icon}</span>
+                <span className="spec-name">{spec.name}</span>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
         
         <motion.div
           className="skills-grid"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.6 }}
         >
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.title}
               className="skill-card"
-              variants={cardVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.6 + catIndex * 0.1, duration: 0.5 }}
             >
               <div className="skill-card-header">
-                <span className="skill-icon mono">{category.icon}</span>
+                <span className="skill-icon">{category.icon}</span>
                 <h3>{category.title}</h3>
               </div>
               
-              <div className="skill-list">
+              <div className="skill-pills">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="skill-item">
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-level mono">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar">
-                      <motion.div
-                        className="skill-progress"
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                        transition={{
-                          duration: 1,
-                          delay: catIndex * 0.1 + skillIndex * 0.1 + 0.3,
-                          ease: "easeOut",
-                        }}
-                      />
-                    </div>
-                  </div>
+                  <motion.span
+                    key={skill}
+                    className="skill-pill"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{
+                      duration: 0.3,
+                      delay: catIndex * 0.1 + skillIndex * 0.05 + 0.3,
+                    }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                  >
+                    {skill}
+                  </motion.span>
                 ))}
               </div>
             </motion.div>
           ))}
         </motion.div>
         
-        {/* Additional tech badges */}
+        {/* Currently Learning */}
         <motion.div
-          className="tech-badges"
+          className="learning-section"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8 }}
         >
-          <span className="badge-label">Also experienced with:</span>
-          <div className="badges">
-            {['CrewAI', 'ADK', 'DeepEval', 'GuardrailsAI', 'Neo4j', 'Pinecone', 'Qdrant', 'PostgreSQL', 'MongoDB', 'LangSmith', 'W&B', 'Power BI'].map((tech) => (
-              <span key={tech} className="badge mono">{tech}</span>
+          <span className="learning-label">Currently learning:</span>
+          <div className="learning-badges">
+            {['Building an LLM from scratch', 'Linux', 'Rust', 'System Design'].map((item) => (
+              <span key={item} className="learning-badge mono">{item}</span>
             ))}
           </div>
         </motion.div>

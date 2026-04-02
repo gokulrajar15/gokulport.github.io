@@ -4,13 +4,69 @@
 
 .skills-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
+/* ===== SPECIALIZATIONS SECTION ===== */
+.specializations-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.specializations-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.specializations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.specialization-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 12px;
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+.specialization-card:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.15);
+}
+
+.spec-icon {
+  font-size: 1.25rem;
+}
+
+.spec-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ===== SKILLS GRID ===== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+}
+
+/* Special layout for 5 cards - last card spans center */
+.skills-grid > .skill-card:nth-child(5) {
+  grid-column: 1 / -1;
+  max-width: 50%;
+  justify-self: center;
 }
 
 .skill-card {
@@ -43,7 +99,6 @@
   justify-content: center;
   background: var(--gradient-1);
   border-radius: 12px;
-  color: white;
 }
 
 .skill-card h3 {
@@ -51,97 +106,89 @@
   font-weight: 600;
 }
 
-.skill-list {
+/* Skill Pills */
+.skill-pills {
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.skill-name {
-  font-size: 0.95rem;
+.skill-pill {
+  padding: 0.5rem 1rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 8px;
+  font-size: 0.9rem;
   color: var(--text-primary);
+  font-family: var(--font-mono);
+  transition: all 0.2s ease;
+  cursor: default;
 }
 
-.skill-level {
-  font-size: 0.85rem;
+.skill-pill:hover {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.4);
   color: var(--accent-primary);
 }
 
-.skill-bar {
-  height: 6px;
-  background: rgba(99, 102, 241, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.skill-progress {
-  height: 100%;
-  background: var(--gradient-1);
-  border-radius: 10px;
-  position: relative;
-}
-
-.skill-progress::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
-}
-
-.tech-badges {
+/* Learning Section */
+.learning-section {
   margin-top: 4rem;
   text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 16px;
 }
 
-.badge-label {
+.learning-label {
   display: block;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  color: #10b981;
+  margin-bottom: 1.25rem;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
-.badges {
+.learning-badges {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
 }
 
-.badge {
+.learning-badge {
   padding: 0.5rem 1rem;
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 50px;
   font-size: 0.85rem;
-  color: var(--accent-primary);
+  color: #10b981;
   transition: all 0.3s ease;
 }
 
-.badge:hover {
-  background: rgba(99, 102, 241, 0.2);
+.learning-badge:hover {
+  background: rgba(16, 185, 129, 0.2);
   transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .skills-grid > .skill-card:nth-child(5) {
+    max-width: 100%;
+  }
+  
+  .specializations-grid {
+    gap: 0.75rem;
+  }
+  
+  .specialization-card {
+    padding: 0.6rem 1rem;
+  }
+  
+  .spec-name {
+    font-size: 0.85rem;
   }
 }

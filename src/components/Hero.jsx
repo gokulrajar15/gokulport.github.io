@@ -59,8 +59,8 @@ const Hero = () => {
     
     const elements = []
     
-    // Add formulas (larger, more visible)
-    for (let i = 0; i < 20; i++) {
+    // Add formulas (larger, more visible) - REDUCED for performance
+    for (let i = 0; i < 10; i++) {
       elements.push({
         id: `formula-${i}`,
         content: formulas[i % formulas.length],
@@ -74,8 +74,8 @@ const Hero = () => {
       })
     }
     
-    // Add symbols (medium)
-    for (let i = 0; i < 30; i++) {
+    // Add symbols (medium) - REDUCED for performance
+    for (let i = 0; i < 12; i++) {
       elements.push({
         id: `symbol-${i}`,
         content: symbols[i % symbols.length],
@@ -89,8 +89,8 @@ const Hero = () => {
       })
     }
     
-    // Add numbers (small, subtle)
-    for (let i = 0; i < 25; i++) {
+    // Add numbers (small, subtle) - REDUCED for performance
+    for (let i = 0; i < 8; i++) {
       elements.push({
         id: `number-${i}`,
         content: numbers[i % numbers.length],
@@ -188,19 +188,19 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Binary stream columns */}
+      {/* Binary stream columns - REDUCED for performance */}
       <div className="binary-streams">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <div 
             key={i} 
             className="binary-column"
             style={{ 
-              left: `${10 + i * 12}%`,
+              left: `${15 + i * 25}%`,
               animationDelay: `${i * 0.5}s`,
               animationDuration: `${15 + i * 2}s`
             }}
           >
-            {[...Array(20)].map((_, j) => (
+            {[...Array(12)].map((_, j) => (
               <span key={j} style={{ animationDelay: `${j * 0.1}s` }}>
                 {Math.random() > 0.5 ? '1' : '0'}
               </span>
@@ -209,7 +209,18 @@ const Hero = () => {
         ))}
       </div>
       
-      {/* Main content - minimal */}
+      {/* Open to work badge - positioned top-right */}
+      <motion.div 
+        className="open-to-work-badge"
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+      >
+        <span className="pulse-dot"></span>
+        <span className="badge-text">Open to AI Engineering roles</span>
+      </motion.div>
+
+      {/* Main content */}
       <div className="hero-center">
         {/* Time-based greeting */}
         <motion.div 
@@ -235,21 +246,10 @@ const Hero = () => {
           >
             {greeting.icon}
           </motion.span>
-          <span className="greeting-text">
-            {greeting.text.split('').map((char, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + i * 0.05, duration: 0.3 }}
-                className="greeting-char"
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </motion.span>
-            ))}
-          </span>
+          <span className="greeting-text">{greeting.text}</span>
         </motion.div>
 
+        {/* NAME - Big and bold */}
         <motion.h1 
           className="hero-name"
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
@@ -258,7 +258,8 @@ const Hero = () => {
         >
           <span className="name-text">Gokul</span>
         </motion.h1>
-        
+
+        {/* Role typewriter */}
         <motion.div 
           className="hero-role"
           initial={{ opacity: 0 }}
