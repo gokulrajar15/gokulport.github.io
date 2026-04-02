@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  // Use '/' for custom domain (gokulraja.dev), or '/gokulport.github.io/' for GitHub Pages subdomain
-  base: '/',
+  // Use '/gokulport.github.io/' for GitHub Pages subdomain
+  base: '/gokulport.github.io/',
 })
